@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main_gradient">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tvEqTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Audio Tuner"
+                    android:textColor="@color/white"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+                
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switchEqualizer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true" />
+            </RelativeLayout>
+
+            <!-- Frequency Glass Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/bg_glass_card"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bands (mB)"
+                    android:textColor="@color/white"
+                    android:alpha="0.6"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <!-- Band 1 -->
+                    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="60" android:textColor="@color/white" android:textSize="10sp"/>
+                        <SeekBar android:id="@+id/sliderEq1" android:layout_width="140dp" android:layout_height="wrap_content" android:layout_marginTop="50dp" android:rotation="-90" android:max="30" android:progress="15" android:thumbTint="@color/accent"/>
+                    </LinearLayout>
+                    <!-- Band 2 -->
+                    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="230" android:textColor="@color/white" android:textSize="10sp"/>
+                        <SeekBar android:id="@+id/sliderEq2" android:layout_width="140dp" android:layout_height="wrap_content" android:layout_marginTop="50dp" android:rotation="-90" android:max="30" android:progress="15" android:thumbTint="@color/accent"/>
+                    </LinearLayout>
+                    <!-- Band 3 -->
+                    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1k" android:textColor="@color/white" android:textSize="10sp"/>
+                        <SeekBar android:id="@+id/sliderEq3" android:layout_width="140dp" android:layout_height="wrap_content" android:layout_marginTop="50dp" android:rotation="-90" android:max="30" android:progress="15" android:thumbTint="@color/accent"/>
+                    </LinearLayout>
+                    <!-- Band 4 -->
+                    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3.5k" android:textColor="@color/white" android:textSize="10sp"/>
+                        <SeekBar android:id="@+id/sliderEq4" android:layout_width="140dp" android:layout_height="wrap_content" android:layout_marginTop="50dp" android:rotation="-90" android:max="30" android:progress="15" android:thumbTint="@color/accent"/>
+                    </LinearLayout>
+                    <!-- Band 5 -->
+                    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10k" android:textColor="@color/white" android:textSize="10sp"/>
+                        <SeekBar android:id="@+id/sliderEq5" android:layout_width="140dp" android:layout_height="wrap_content" android:layout_marginTop="50dp" android:rotation="-90" android:max="30" android:progress="15" android:thumbTint="@color/accent"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Effects Glass Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_glass_card"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:gravity="center">
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:layout_marginEnd="40dp">
+                    <com.codmeric.musicplayer.ui.KnobView
+                        android:id="@+id/knobBass"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BASS" android:textColor="@color/white" android:textStyle="bold" android:textSize="12sp" android:layout_marginTop="8dp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                    <com.codmeric.musicplayer.ui.KnobView
+                        android:id="@+id/knobTreble"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TREBLE" android:textColor="@color/white" android:textStyle="bold" android:textSize="12sp" android:layout_marginTop="8dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Presets"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button android:id="@+id/chipFlat" style="@style/Widget.Material3.Button.ElevatedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Flat" android:layout_marginEnd="12dp"/>
+                    <Button android:id="@+id/chipRock" style="@style/Widget.Material3.Button.ElevatedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rock" android:layout_marginEnd="12dp"/>
+                    <Button android:id="@+id/chipPop" style="@style/Widget.Material3.Button.ElevatedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pop" android:layout_marginEnd="12dp"/>
+                    <Button android:id="@+id/chipJazz" style="@style/Widget.Material3.Button.ElevatedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Jazz" android:layout_marginEnd="12dp"/>
+                    <Button android:id="@+id/chipClassical" style="@style/Widget.Material3.Button.ElevatedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Classical" android:layout_marginEnd="12dp"/>
+                    <Button android:id="@+id/chipVocal" style="@style/Widget.Material3.Button.ElevatedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Vocal"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
